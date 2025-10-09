@@ -1,0 +1,111 @@
+================================================================================
+                         DEMO.MP4 PLACEHOLDER
+================================================================================
+
+This file serves as a placeholder for the actual demo.mp4 video file.
+
+DEMO VIDEO REQUIREMENTS:
+------------------------
+- Duration: 5-6 minutes
+- Resolution: 1920x1080 (1080p)
+- Format: MP4 (H.264 codec)
+- Frame Rate: 30 FPS minimum
+- File Size: < 100MB recommended
+
+VIDEO CONTENT:
+--------------
+1. SDK Installation & Setup (0:00 - 0:30)
+2. Next.js Integration (0:30 - 1:30)
+3. Encryption Demo (1:30 - 2:30)
+4. Smart Contract Interaction (2:30 - 3:30)
+5. Decryption Demo (3:30 - 4:00)
+6. Privacy Voting Example (4:00 - 5:00)
+7. Developer Experience (5:00 - 6:00)
+
+BEFORE FINAL SUBMISSION:
+------------------------
+[ ] Record the actual demo video following DEMO_VIDEO.md guide
+[ ] Edit and export as demo.mp4
+[ ] Replace this placeholder file with the actual video
+[ ] Verify video plays correctly
+[ ] Check file size is reasonable for repository
+
+ALTERNATIVE OPTIONS:
+--------------------
+If demo.mp4 is too large for the repository:
+
+Option 1: Upload to YouTube
+- Set to "Unlisted" or "Public"
+- Add link to README.md
+- Example: https://youtu.be/YOUR_VIDEO_ID
+
+Option 2: GitHub Release
+- Create a release (v1.0.0)
+- Attach demo.mp4 as release asset
+- Link in README.md
+
+Option 3: Cloud Storage
+- Upload to Google Drive/Dropbox
+- Generate shareable link
+- Add link to README.md
+
+RECORDING CHECKLIST:
+--------------------
+[ ] Install screen recording software (OBS Studio recommended)
+[ ] Run Next.js example: cd examples/nextjs-example && npm run dev
+[ ] Connect wallet to Sepolia testnet
+[ ] Prepare test data in advance
+[ ] Practice demo 2-3 times before recording
+[ ] Check audio quality
+[ ] Disable desktop notifications
+[ ] Close unnecessary applications
+
+RECORDING SCRIPT:
+-----------------
+See DEMO_VIDEO.md for complete script and instructions.
+
+Key Points to Demonstrate:
+- Easy SDK installation (npm install @fhevm/sdk)
+- Simple provider setup in Next.js
+- Encrypting values with one line of code
+- Submitting encrypted data to smart contracts
+- Decrypting authorized results
+- Privacy guarantees throughout the process
+- Great developer experience with TypeScript
+
+TECHNICAL SETUP:
+----------------
+1. Terminal: Show installation commands
+2. Code Editor: Display code with syntax highlighting
+3. Browser: Demo the live application
+4. Wallet: Show transaction confirmations
+
+EDITING:
+--------
+- Add intro title screen
+- Include text overlays for key concepts
+- Highlight important code sections
+- Add smooth transitions between sections
+- Include outro with links to documentation
+
+EXPORT SETTINGS:
+----------------
+Format: MP4
+Codec: H.264
+Resolution: 1920x1080
+Frame Rate: 30 FPS
+Bitrate: 8-10 Mbps
+Audio: AAC, 128-192 kbps
+
+================================================================================
+                    READY FOR VIDEO PRODUCTION
+================================================================================
+
+For detailed recording and editing instructions, see:
+- DEMO_VIDEO.md (complete guide)
+- examples/nextjs-example/README.md (app setup)
+- README.md (project overview)
+
+Good luck with your recording!
+
+================================================================================
