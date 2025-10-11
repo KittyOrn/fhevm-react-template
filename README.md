@@ -518,7 +518,7 @@ const {
 
 A comprehensive video demonstration is included in this repository:
 
-**File**: [`demo.mp4`](./demo.mp4)
+**File**: [`demo.mp4`]
 
 **Contents**:
 - SDK installation and setup
