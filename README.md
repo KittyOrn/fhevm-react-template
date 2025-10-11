@@ -712,6 +712,6 @@ This Universal FHEVM SDK was built specifically for the Zama Bounty Challenge, d
 
 **Universal FHEVM SDK** © 2025
 
-[Documentation](./docs/) • [Examples](./examples/) • [Report Issue](https://github.com/your-org/fhevm-react-template/issues) • [Video Demo](./demo.mp4)
+[Documentation](./docs/) • [Examples](./examples/) • [Report Issue](https://github.com/your-org/fhevm-react-template/issues) • [Video Demo]
 
-</div>
+</div
