@@ -10,7 +10,7 @@
 
 **📹 Video Demo**: Download and watch `demo.mp4` for complete demonstration
 
-**💻 GitHub**: [https://github.com/KittyOrn/fhevm-react-template](https://github.com/KittyOrn/fhevm-react-template)
+**💻 GitHub**: Fork from [https://github.com/zama-ai/fhevm-react-template](https://github.com/zama-ai/fhevm-react-template)
 
 A universal, developer-friendly SDK that makes building confidential frontends with FHEVM simple, consistent, and intuitive. Built for the **Zama Bounty Challenge**.
 
@@ -385,56 +385,73 @@ await contract.processEncrypted(encrypted.data, encrypted.proof);
 
 ## 🎨 Examples
 
+All examples include complete frontend integration with @fhevm/sdk:
+
 ### 1. Next.js Example (Required)
 
 **Location**: `examples/nextjs-example/`
+**Port**: 3000
 
-A complete Next.js application demonstrating SDK integration:
+A complete Next.js 14 application demonstrating SDK integration:
 - ✅ App Router support
-- ✅ Server components
-- ✅ Client-side encryption
-- ✅ Real-time updates
-- ✅ TypeScript
+- ✅ Server and Client components
+- ✅ Client-side encryption demo
+- ✅ Real-time SDK status
+- ✅ TypeScript + Tailwind CSS
+- ✅ Interactive UI components
 
 ```bash
 cd examples/nextjs-example
 npm install
 npm run dev
+# Open http://localhost:3000
 ```
 
+### 2. React Example
 
-### 2. Privacy Voting Platform
+**Location**: `examples/react-example/`
+**Port**: 3001
+
+Modern React application with Vite showing SDK usage:
+- ✅ React 18 with hooks
+- ✅ Interactive encryption/decryption demo
+- ✅ Network status display
+- ✅ TypeScript support
+- ✅ Responsive design
+- ✅ Educational focus
+
+```bash
+cd examples/react-example
+npm install
+npm run dev
+# Open http://localhost:3001
+```
+
+### 3. Privacy Voting dApp
 
 **Location**: `examples/privacy-voting/`
+**Port**: 3002
 
-Real-world production example featuring:
-- Cultural project voting with FHE
-- Complete smart contract integration
-- 47 comprehensive tests
-- Production-ready implementation
+Production-ready dApp with complete smart contract integration:
+- ✅ Cultural project voting with FHE
+- ✅ CulturalVoting.sol smart contract
+- ✅ Next.js 14 frontend
+- ✅ Beautiful Tailwind UI
+- ✅ Mobile-responsive design
+- ✅ Real-world use case demonstration
 
 ```bash
 cd examples/privacy-voting
 npm install
 npm run dev
+# Open http://localhost:3002
 ```
 
-**Live Demo**: [https://cultural-voting.vercel.app](https://cultural-voting.vercel.app)
-
-### 3. React Example
-
-**Location**: `examples/react-example/`
-
-Minimal React setup showing SDK usage:
-- Hooks demonstration
-- Encryption/decryption flows
-- Contract interaction
-
-```bash
-cd examples/react-example
-npm install
-npm start
-```
+**Smart Contract**: Includes fully documented CulturalVoting.sol with:
+- Encrypted vote storage (euint8)
+- Homomorphic vote aggregation
+- Access control system
+- Multiple voting rounds support
 
 ---
 
@@ -699,10 +716,9 @@ This Universal FHEVM SDK was built specifically for the Zama Bounty Challenge, d
 - ✅ <10 lines to get started
 
 **Competition Entry Information**:
-- **Repository**: https://github.com/HannaSchinner/fhevm-react-template
 - **Forked From**: https://github.com/zama-ai/fhevm-react-template
-- **Video Demo**: [demo.mp4]
-- **Live Demos**: See Examples section above
+- **Video Demo**: [demo.mp4](./demo.mp4)
+- **Examples**: Multiple framework examples included
 
 ---
 
