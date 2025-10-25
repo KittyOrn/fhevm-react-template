@@ -1,14 +1,57 @@
-# Privacy-Protected Voting Example
+# Privacy-Protected Voting dApp
 
-Complete example of a privacy-protected cultural project voting system built with **@fhevm/sdk**.
+Complete production-ready dApp demonstrating privacy-protected cultural project voting system built with **@fhevm/sdk** and **Next.js 14**.
 
 ## Features
 
-- **Encrypted Voting**: All votes encrypted using FHE before submission
-- **Homomorphic Aggregation**: Vote tallying without decryption
-- **Privacy Guarantees**: Individual scores remain private
-- **Access Control**: Only authorized voters can participate
-- **Result Verification**: Verifiable results without revealing individual votes
+- **🔐 Encrypted Voting**: All votes encrypted using FHE before submission
+- **🧮 Homomorphic Aggregation**: Vote tallying without decryption
+- **🛡️ Privacy Guarantees**: Individual scores remain private
+- **👥 Access Control**: Only authorized voters can participate
+- **✅ Result Verification**: Verifiable results without revealing individual votes
+- **💻 Modern Frontend**: Next.js 14 App Router with TypeScript
+- **🎨 Beautiful UI**: Tailwind CSS with responsive design
+- **📱 Mobile-Friendly**: Works seamlessly on all devices
+
+## Quick Start
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3002](http://localhost:3002) in your browser.
+
+### Build
+
+```bash
+npm run build
+npm start
+```
+
+## Project Structure
+
+```
+privacy-voting/
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Main voting page
+│   ├── providers.tsx       # SDK provider setup
+│   └── globals.css         # Global styles
+├── contracts/
+│   └── CulturalVoting.sol # FHE voting smart contract
+├── package.json            # Dependencies
+├── next.config.js          # Next.js config
+├── tsconfig.json           # TypeScript config
+└── tailwind.config.ts      # Tailwind config
+```
 
 ## Architecture
 
