@@ -196,18 +196,16 @@ fhevm-react-template/
 │   └── fhevm-sdk/                    # 🎯 Universal SDK Package
 │       ├── src/
 │       │   ├── core/                 # Core functionality
-│       │   │   ├── FhevmSDK.ts      # Main SDK class
-│       │   │   ├── encryption.ts    # Encryption utilities
-│       │   │   ├── decryption.ts    # Decryption utilities
-│       │   │   └── contract.ts      # Contract interaction
+│       │   │   └── FhevmSDK.ts      # Main SDK class (encryption, decryption, contract interaction)
+│       │   ├── hooks/               # React hooks
+│       │   │   └── useFhevm.ts      # React hooks (useFhevm, useEncrypt, useDecrypt, useNetwork)
 │       │   ├── adapters/            # Framework adapters
-│       │   │   ├── react.ts         # React hooks
-│       │   │   ├── nextjs.ts        # Next.js utilities
-│       │   │   ├── vue.ts           # Vue composables
-│       │   │   └── node.ts          # Node.js utilities
+│       │   │   └── react.tsx        # React context provider
+│       │   ├── utils/               # Utility functions
+│       │   │   ├── encryption.ts    # Encryption utilities and validation
+│       │   │   └── decryption.ts    # Decryption utilities and EIP-712 signatures
 │       │   ├── types/               # TypeScript types
-│       │   │   ├── sdk.ts
-│       │   │   └── fhevm.ts
+│       │   │   └── index.ts         # Type definitions
 │       │   └── index.ts             # Main export
 │       ├── package.json
 │       ├── tsconfig.json
@@ -215,9 +213,12 @@ fhevm-react-template/
 │
 ├── examples/                         # 🎨 Integration Examples
 │   ├── nextjs-example/              # Next.js showcase (required)
-│   │   ├── app/
-│   │   ├── components/
-│   │   ├── lib/
+│   │   ├── src/
+│   │   │   ├── app/                 # App Router pages & API routes
+│   │   │   ├── components/          # UI, FHE, and example components
+│   │   │   ├── lib/                 # FHE utilities & helpers
+│   │   │   ├── hooks/               # Custom React hooks
+│   │   │   └── types/               # TypeScript definitions
 │   │   └── package.json
 │   │
 │   ├── privacy-voting/              # Real dApp example
@@ -228,6 +229,9 @@ fhevm-react-template/
 │   └── react-example/               # React integration
 │       ├── src/
 │       └── package.json
+│
+├── templates/                       # 🔗 Reference to examples (for bounty submission)
+│   └── README.md                    # Templates directory guide
 │
 ├── docs/                            # 📚 Documentation
 │   ├── getting-started.md
@@ -392,20 +396,61 @@ All examples include complete frontend integration with @fhevm/sdk:
 **Location**: `examples/nextjs-example/`
 **Port**: 3000
 
-A complete Next.js 14 application demonstrating SDK integration:
-- ✅ App Router support
-- ✅ Server and Client components
-- ✅ Client-side encryption demo
-- ✅ Real-time SDK status
+A complete Next.js 14 application demonstrating SDK integration with comprehensive structure:
+
+**Features**:
+- ✅ App Router support with server and client components
+- ✅ Complete SDK integration (@fhevm/sdk)
+- ✅ Client-side encryption/decryption demos
+- ✅ Real-time SDK status monitoring
 - ✅ TypeScript + Tailwind CSS
 - ✅ Interactive UI components
+- ✅ Comprehensive example components
 
+**Directory Structure**:
+```
+nextjs-example/
+├── src/
+│   ├── app/              # Next.js App Router
+│   │   ├── api/          # API routes for FHE operations
+│   │   │   ├── fhe/      # Encryption, decryption, computation endpoints
+│   │   │   └── keys/     # Key management API
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/       # React components
+│   │   ├── ui/          # Basic UI components (Button, Input, Card)
+│   │   ├── fhe/         # FHE components (Provider, Demos, KeyManager)
+│   │   └── examples/    # Use case examples (Banking, Medical)
+│   ├── lib/             # Utility libraries
+│   │   ├── fhe/         # FHE client, server, keys, types
+│   │   └── utils/       # Security and validation utilities
+│   ├── hooks/           # Custom React hooks
+│   │   ├── useFHE.ts
+│   │   ├── useEncryption.ts
+│   │   └── useComputation.ts
+│   └── types/           # TypeScript definitions
+│       ├── fhe.ts
+│       └── api.ts
+├── package.json
+└── README.md
+```
+
+**Installation & Run**:
 ```bash
 cd examples/nextjs-example
 npm install
 npm run dev
 # Open http://localhost:3000
 ```
+
+**Key Components**:
+- **FHEProvider**: Context provider for SDK initialization
+- **EncryptionDemo**: Interactive encryption demonstration
+- **ComputationDemo**: Homomorphic computation examples
+- **KeyManager**: Key management interface
+- **BankingExample**: Private banking use case
+- **MedicalExample**: Healthcare privacy demonstration
 
 ### 2. React Example
 
@@ -553,10 +598,12 @@ A comprehensive video demonstration is included in this repository:
 ### ✅ GitHub Repository
 
 This repository contains the complete Universal FHEVM SDK with:
-- Framework-agnostic core package
-- React/Next.js/Vue/Node.js adapters
-- Multiple integration examples
-- Comprehensive documentation
+- Framework-agnostic core package (`packages/fhevm-sdk/`)
+- React hooks and adapters (`src/hooks/`, `src/adapters/`)
+- Encryption/decryption utilities (`src/utils/`)
+- Multiple integration examples (`examples/`)
+- Templates directory (`templates/`) referencing examples
+- Comprehensive documentation (`docs/`)
 
 ### ✅ Example Templates
 
