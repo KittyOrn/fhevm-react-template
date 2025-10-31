@@ -37,15 +37,58 @@ npm start
 
 ```
 nextjs-example/
-├── app/
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Home page with encryption demo
-│   ├── providers.tsx       # FhevmProvider configuration
-│   └── globals.css         # Global styles with Tailwind
-├── package.json            # Dependencies and scripts
-├── next.config.js          # Next.js configuration
-├── tsconfig.json           # TypeScript configuration
-└── tailwind.config.ts      # Tailwind CSS configuration
+├── src/
+│   ├── app/                        # App Router
+│   │   ├── layout.tsx              # Root layout
+│   │   ├── page.tsx                # Home page
+│   │   ├── providers.tsx           # Context providers
+│   │   ├── globals.css             # Global styles
+│   │   └── api/                    # API routes
+│   │       ├── fhe/
+│   │       │   ├── route.ts         # Main FHE operations
+│   │       │   ├── encrypt/route.ts # Encryption endpoint
+│   │       │   ├── decrypt/route.ts # Decryption endpoint
+│   │       │   └── compute/route.ts # Computation endpoint
+│   │       └── keys/route.ts        # Key management
+│   │
+│   ├── components/                 # React components
+│   │   ├── ui/                     # Basic UI components
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   └── Card.tsx
+│   │   ├── fhe/                    # FHE functionality
+│   │   │   ├── FHEProvider.tsx     # SDK context provider
+│   │   │   ├── EncryptionDemo.tsx  # Encryption demo
+│   │   │   ├── ComputationDemo.tsx # Computation demo
+│   │   │   └── KeyManager.tsx      # Key management UI
+│   │   └── examples/               # Use case examples
+│   │       ├── BankingExample.tsx  # Banking use case
+│   │       └── MedicalExample.tsx  # Healthcare use case
+│   │
+│   ├── lib/                        # Utility libraries
+│   │   ├── fhe/                    # FHE integration
+│   │   │   ├── client.ts           # Client-side operations
+│   │   │   ├── server.ts           # Server-side operations
+│   │   │   ├── keys.ts             # Key management
+│   │   │   └── types.ts            # FHE type definitions
+│   │   └── utils/                  # Utility functions
+│   │       ├── security.ts         # Security helpers
+│   │       └── validation.ts       # Input validation
+│   │
+│   ├── hooks/                      # Custom React hooks
+│   │   ├── useFHE.ts               # Main FHE hook
+│   │   ├── useEncryption.ts        # Encryption hook
+│   │   └── useComputation.ts       # Computation hook
+│   │
+│   └── types/                      # TypeScript definitions
+│       ├── fhe.ts                  # FHE types
+│       └── api.ts                  # API types
+│
+├── package.json                    # Dependencies and scripts
+├── next.config.js                  # Next.js configuration
+├── tsconfig.json                   # TypeScript configuration
+├── tailwind.config.ts              # Tailwind CSS configuration
+└── README.md                       # This file
 ```
 
 ## SDK Integration
@@ -127,28 +170,106 @@ return (
 );
 ```
 
-### Encryption Demo
+### Encryption Demo Component
+
+Use the pre-built `EncryptionDemo` component:
 
 ```tsx
-const { encrypt, isEncrypting } = useEncrypt();
-const [result, setResult] = useState(null);
+import { EncryptionDemo } from '@/components/fhe/EncryptionDemo';
 
-const handleEncrypt = async (value: number) => {
-  const encrypted = await encrypt.uint8(value);
-  setResult(encrypted);
-};
+export default function Page() {
+  return <EncryptionDemo />;
+}
 ```
 
-### Decryption Demo
+### Computation Demo Component
+
+Use the `ComputationDemo` for homomorphic operations:
 
 ```tsx
-const { decrypt, isDecrypting } = useDecrypt();
-const [decrypted, setDecrypted] = useState(null);
+import { ComputationDemo } from '@/components/fhe/ComputationDemo';
 
-const handleDecrypt = async (encryptedData: Uint8Array) => {
-  const value = await decrypt.uint8(encryptedData);
-  setDecrypted(value);
-};
+export default function Page() {
+  return <ComputationDemo />;
+}
+```
+
+### Banking Example Component
+
+Private financial transactions example:
+
+```tsx
+import { BankingExample } from '@/components/examples/BankingExample';
+
+export default function Page() {
+  return <BankingExample />;
+}
+```
+
+### Medical Example Component
+
+Healthcare privacy demonstration:
+
+```tsx
+import { MedicalExample } from '@/components/examples/MedicalExample';
+
+export default function Page() {
+  return <MedicalExample />;
+}
+```
+
+### Custom Encryption Hook
+
+Use the enhanced `useEncryption` hook with validation:
+
+```tsx
+import { useEncryption } from '@/hooks/useEncryption';
+
+function MyComponent() {
+  const { encryptValue, isEncrypting, error, lastEncrypted } = useEncryption();
+
+  const handleEncrypt = async () => {
+    const encrypted = await encryptValue(42, 'uint8');
+    if (encrypted) {
+      console.log('Encrypted:', encrypted);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={handleEncrypt} disabled={isEncrypting}>
+        Encrypt
+      </button>
+      {error && <p className="text-red-600">{error}</p>}
+    </div>
+  );
+}
+```
+
+### Custom Computation Hook
+
+Use the `useComputation` hook for homomorphic operations:
+
+```tsx
+import { useComputation } from '@/hooks/useComputation';
+
+function MyComponent() {
+  const { compute, isComputing, lastResult, error } = useComputation();
+
+  const handleCompute = async () => {
+    const result = await compute({
+      operation: 'add',
+      operands: [encrypted1, encrypted2]
+    });
+    console.log('Result:', result);
+  };
+
+  return (
+    <button onClick={handleCompute} disabled={isComputing}>
+      Compute Sum
+    </button>
+  );
+}
 ```
 
 ## Loading States

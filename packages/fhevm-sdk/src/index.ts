@@ -11,8 +11,13 @@
 export { FhevmSDK } from './core/FhevmSDK';
 export type { FhevmConfig, EncryptedData } from './core/FhevmSDK';
 
-// React adapter (only if React is available)
+// React adapter and hooks
 export * from './adapters/react';
+export * from './hooks/useFhevm';
+
+// Utilities
+export * from './utils/encryption';
+export * from './utils/decryption';
 
 // Types
 export * from './types';
